@@ -1,5 +1,6 @@
 package pl.jakubkrys.exceptions.throwsexamples;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ThrowMain {
@@ -19,5 +20,15 @@ public class ThrowMain {
                 System.out.println("Such month does not exist");
             }
         } while (number != 0);
+
+        System.out.print("Name : ");
+        String name = scanner.nextLine();
+        try {
+            boolean isNameCorrect = Utils.checkName(name.toUpperCase());
+            System.out.println(isNameCorrect);
+        } catch (IllegalArgumentException e) {
+            System.out.println(false);
+        }
+
     }
 }

@@ -32,4 +32,14 @@ public final class Utils {
                 throw new IllegalArgumentException();
         }
     }
+
+    public static boolean checkName(String name) throws IllegalArgumentException {
+        char[] nameTable = name.toCharArray();
+        for (char c : nameTable) {
+            if (c < 65 || c > 90){
+                throw new IllegalArgumentException();
+            }
+        }
+        return true;
+    }
 }
