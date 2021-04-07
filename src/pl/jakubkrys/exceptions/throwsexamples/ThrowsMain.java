@@ -3,7 +3,7 @@ package pl.jakubkrys.exceptions.throwsexamples;
 import java.io.*;
 import java.util.Scanner;
 
-public class Main {
+public class ThrowsMain {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +38,7 @@ public class Main {
 //        }
 //
 //
+
 
     }
 }
