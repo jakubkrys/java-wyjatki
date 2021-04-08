@@ -1,5 +1,7 @@
 package pl.jakubkrys.exceptions.throwsexamples;
 
+import pl.jakubkrys.exceptions.customexceptions.*;
+
 public final class Utils {
 
     public static String monthNameByNumber(int number) throws IllegalArgumentException {
@@ -41,5 +43,29 @@ public final class Utils {
             }
         }
         return true;
+    }
+
+    public static boolean isValidPassword (String password1, String password2) throws PasswordException {
+        if (!password1.equals(password2)){
+            throw new PasswordException();
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean isValidEmail (String email) throws EmailException {
+        if (email.length() < 10 || !email.contains("@")){
+            throw new EmailException();
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean isValidPesel(String pesel) throws PeselException{
+        if (pesel.length() == 11 && pesel.substring(0).matches("[0-9]*")) {
+            return true;
+        } else {
+            throw new PeselException();
+        }
     }
 }
